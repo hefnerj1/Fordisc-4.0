@@ -19,10 +19,8 @@ This changelog summarizes public, user-facing changes. Internal development hist
 ## FORDISC 4.0 — Initial web release
 
 - Rebuilt FORDISC as a web application.
-- Introduced a case-based workflow for FDB, Howells, and Postcranial data.
 - Added modern Results, Extended Results, Graphs, reports, and Run Log workflows.
 - Added anonymous Module Test Cases through FORDISC Free.
 - Added Student, Pro, and Institution access models.
-- Added stature display in inches or centimeters.
 - Added a Howells Reference Group Map.
 - Extensively compared supported analytical workflows with FORDISC 3 during beta validation.
