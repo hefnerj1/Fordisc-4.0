@@ -11,7 +11,7 @@ Send security concerns privately to **hefnerj1@msu.edu** with the subject line `
 Never include any of the following in this public repository:
 
 - Case identifiers or case notes
-- Human-remains measurements or analysis inputs
+- Measurements or analysis inputs
 - Reports, Run Logs, screenshots, or exports containing case information
 - Usernames, passwords, Clerk identifiers, session tokens, API keys, or TouchNet references
 - Private FORDISC source code, computational-engine code, reference datasets, or deployment configuration
