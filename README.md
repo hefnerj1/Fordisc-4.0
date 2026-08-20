@@ -2,7 +2,7 @@
 
 **Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0.**
 
-[Launch FORDISC 4.0](https://www.fordisc.com) · [Purchase access through UTK](https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true) · [View release notes](CHANGELOG.md)
+[Launch FORDISC 4.0] · [Purchase access through UTK](https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true) · [View release notes](CHANGELOG.md)
 
 > [!IMPORTANT]
 > This is a public repository only. It contains **no FORDISC application source, computational engine, reference datasets, case data, credentials, deployment configuration, or release binaries**. The production application and source repository are maintained separately.
