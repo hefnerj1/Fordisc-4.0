@@ -1,7 +1,5 @@
 # FORDISC 4.0 Contributors
 
-The category and name order below is intentional and should be preserved.
-
 ## Scientific Lead & FORDISC 4.0 Director
 
 Joseph T. Hefner
