@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FORDISC 4.0 | Project information and release notes</title>
-  <meta name="description" content="Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0." />
+  <meta name="description" content="Public project information, access details, release notes, citation guidance, and contributor acknowledgments for FORDISC 4.0." />
   <meta property="og:title" content="FORDISC 4.0" />
-  <meta property="og:description" content="Public project information, access details, and release notes for FORDISC 4.0." />
+  <meta property="og:description" content="Public project information, access details, release notes, and citation guidance for FORDISC 4.0." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#54209b" />
   <link rel="icon" href="assets/favicon.ico" />
@@ -35,7 +35,10 @@
         <p class="eyebrow">Web-based forensic discriminant functions</p>
         <h1>FORDISC <span>4.0</span></h1>
         <p class="hero-lede">FORDISC 4.0 is the modern web application for flexible cranial and postcranial analysis, including population-affinity, sex, and stature workflows built upon the FORDISC scientific tradition.</p>
-        <div class="release-chip">Current technical release: 4.0.2</div>
+        <div class="release-status" aria-label="Release status">
+          <div class="release-chip">Public release: 4.0.11</div>
+          <div class="release-chip beta">International Crania beta: 4.1.0-alpha.1</div>
+        </div>
         <div class="actions">
           <a class="button primary" href="https://www.fordisc.com" target="_blank" rel="noopener noreferrer">Launch FORDISC 4.0</a>
           <a class="button secondary" href="https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&amp;SINGLESTORE=true" target="_blank" rel="noopener noreferrer">Purchase access through UTK</a>
@@ -58,11 +61,11 @@
       </div>
       <div class="feature-grid">
         <article class="card feature-card"><span class="tag">Web application</span><h3>No local installation</h3><p>Access FORDISC through a supported web browser with production authentication and subscription controls.</p></article>
-        <article class="card feature-card"><span class="tag">Case workflow</span><h3>Cranial and postcranial data together</h3><p>One saved case can contain independent FDB, Howells, and Postcranial analysis data and results.</p></article>
+        <article class="card feature-card"><span class="tag">Case workflow</span><h3>Cranial and postcranial data together</h3><p>One saved case can retain independent FDB, Howells, International Crania, Postcranial DFA, and Stature analysis state.</p></article>
         <article class="card feature-card"><span class="tag">Analytical tools</span><h3>Validated FORDISC workflows</h3><p>Supported no-Stepwise and Stepwise workflows were extensively compared with FORDISC 3 during beta validation.</p></article>
-        <article class="card feature-card"><span class="tag">Results</span><h3>Modern tables, graphs, and reports</h3><p>Review Results, Extended Results, canonical plots, dendrograms, 3D plots, reports, and a case-based Run Log.</p></article>
-        <article class="card feature-card"><span class="tag">Stature</span><h3>Inches or centimeters</h3><p>Display stature estimates in either unit system without changing the underlying calculations.</p></article>
-        <article class="card feature-card"><span class="tag">Try before subscribing</span><h3>FORDISC Free</h3><p>Run locked FDB, Howells, and Postcranial Module Test Cases without signing in.</p></article>
+        <article class="card feature-card"><span class="tag">International beta</span><h3>International Crania</h3><p>Run the independent International reference dataset through Fordisc Pro or Fordisc Institution access. It is not part of Student or Demo access.</p></article>
+        <article class="card feature-card"><span class="tag">Results</span><h3>Modern tables, graphs, and reports</h3><p>Review Results, Extended Results, accessible graphics, a five-lane Case Report, and the complete case-based Run Log.</p></article>
+        <article class="card feature-card"><span class="tag">Try before subscribing</span><h3>Fordisc Demo</h3><p>Run locked FDB, Howells, and Postcranial Demo Cases without signing in.</p></article>
       </div>
     </section>
 
@@ -75,10 +78,10 @@
         <p>Current pricing and purchase options are maintained in the University of Tennessee's secure storefront.</p>
       </div>
       <div class="plan-grid">
-        <article class="card plan-card"><h3>FORDISC Free</h3><p>Built-in Module Test Cases with Results and Graphs. No sign-in, measurement entry, or case storage.</p><small>Available immediately.</small></article>
-        <article class="card plan-card"><h3>FORDISC Student</h3><p>FDB and Postcranial access for eligible users, including measurement entry, Results, Graphs, and limited case management.</p><small>Requires a verified qualifying institutional email.</small></article>
-        <article class="card plan-card"><h3>FORDISC Pro</h3><p>Full individual access to every currently supported FORDISC 4.0 module and tool.</p><small>Individual named-user access.</small></article>
-        <article class="card plan-card"><h3>FORDISC Institution</h3><p>Full access for organizations and laboratories, including 10 named users. Additional users may be added.</p><small>Institutional named-user access.</small></article>
+        <article class="card plan-card"><h3>Fordisc Demo</h3><p>Built-in FDB, Howells, and Postcranial Demo Cases with Results and Graphs. No sign-in, measurement entry, or case storage.</p><small>Available immediately. International Crania is not included.</small></article>
+        <article class="card plan-card"><h3>Fordisc Student</h3><p>FDB and Postcranial access for eligible users, including measurement entry, Results, Graphs, and limited case management.</p><small>Requires a verified qualifying institutional email.</small></article>
+        <article class="card plan-card"><h3>Fordisc Pro</h3><p>Full individual access to every currently supported FORDISC 4.0 module and tool, including International Crania in the active beta candidate.</p><small>Individual named-user access.</small></article>
+        <article class="card plan-card"><h3>Fordisc Institution</h3><p>Full access for organizations and laboratories, including 15 named users. Additional named users may be added through an approved arrangement.</p><small>Includes International Crania in the active beta candidate.</small></article>
       </div>
       <div class="purchase-panel">
         <div>
@@ -99,9 +102,9 @@
         <p>Public release notes summarize user-facing changes. Internal development history remains in the private application repository.</p>
       </div>
       <div class="release-grid">
-        <article class="card release-card current"><span class="tag">Current</span><h3>Release 4.0.2</h3><ul><li>Improved manual subscription recognition for TouchNet-provisioned Student, Pro, and Institution accounts.</li><li>Added clearer account eligibility and provisioning diagnostics.</li><li>Updated the approved contributor roster.</li></ul></article>
-        <article class="card release-card"><span class="tag">Presentation</span><h3>Release 4.0.1</h3><ul><li>Refined the Howells Reference Group Map.</li><li>Simplified public product-version presentation.</li><li>Removed the internal R-engine identifier from practitioner-facing reports.</li></ul></article>
-        <article class="card release-card"><span class="tag">Initial web release</span><h3>FORDISC 4.0</h3><ul><li>Introduced the case-based web application.</li><li>Added subscription tiers and anonymous Module Test Cases.</li><li>Modernized analysis setup, results, graphs, reports, Help, and Run Log workflows.</li></ul></article>
+        <article class="card release-card current"><span class="tag">Current public release</span><h3>Release 4.0.11</h3><ul><li>Added the unified Case Report with latest-successful-result lanes and graph snapshots.</li><li>Improved accessibility, keyboard interaction, report controls, and layout.</li><li>Strengthened production security and privacy protections.</li></ul></article>
+        <article class="card release-card beta-card"><span class="tag">Beta candidate</span><h3>Release 4.1.0-alpha.1</h3><ul><li>Added International Crania for Pro and Institution access.</li><li>Added independent saved-case state and a fifth Case Report lane.</li><li>Improved graph colors, labels, and layout across live and report graphics.</li></ul></article>
+        <article class="card release-card"><span class="tag">Account controls</span><h3>Release 4.0.9</h3><ul><li>Added one-active-session enforcement while permitting multiple tabs in one session.</li><li>Added Institution named-user and administrative controls.</li><li>Preserved invitation-only provisioning through the UTK purchase workflow.</li></ul></article>
       </div>
     </section>
 
@@ -129,10 +132,13 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">Citation</p>
-          <h2>Formal citation forthcoming</h2>
+          <h2>Preferred FORDISC 4.0 citation</h2>
         </div>
       </div>
-      <div class="callout"><p>The preferred FORDISC 4.0 citation is being finalized. Citation guidance will be posted here after the author list and institutional record are confirmed.</p></div>
+      <div class="callout">
+        <p>Hefner, JT, Jantz RL, and Ousley SD. FORDISC 4.0: Personal computer forensic discriminant functions. University of Tennessee; 2026.</p>
+        <p class="citation-guidance">Analytical documentation should also record the module, reference data, measurements, reference groups, and analysis options used.</p>
+      </div>
     </section>
 
     <section class="section" id="support">
@@ -143,7 +149,7 @@
         </div>
         <p>Do not post case data, measurements, case identifiers, credentials, or security vulnerabilities in a public GitHub issue.</p>
       </div>
-      <p>Subscription and eligibility support: <a href="mailto:hefnerj1@msu.edu">hefnerj1@msu.edu</a></p>
+      <p>Subscription and eligibility support: <a href="mailto:fordisc.support@gmail.com">fordisc.support@gmail.com</a></p>
       <p>For general use and scientific interpretation, begin with the Help resources provided inside FORDISC 4.0.</p>
     </section>
   </main>

@@ -1,27 +1,30 @@
 # FORDISC 4.0 Access
 
-## FORDISC Free
+## Fordisc Demo
 
 - No sign-in required.
-- Locked FDB, Howells, and Postcranial Module Test Cases.
+- Locked FDB, Howells, and Postcranial Demo Cases.
 - Results and Graphs only.
 - No measurement entry or case storage.
+- No International Crania Demo Case.
 
-## FORDISC Student
+## Fordisc Student
 
 - FDB and Postcranial access.
 - Measurement Entry, Results, Graphs, and limited case management.
 - Requires a verified qualifying institutional email.
 
-## FORDISC Pro
+## Fordisc Pro
 
 - Full individual access to every currently supported FORDISC 4.0 module and tool.
+- Includes International Crania in the active beta candidate.
 
-## FORDISC Institution
+## Fordisc Institution
 
 - Full access for organizations and laboratories.
-- Includes 10 named users.
-- Additional users may be added.
+- Includes 15 named users.
+- Additional named users may be added through an approved arrangement.
+- Includes International Crania in the active beta candidate.
 
 ## Purchase and activation
 
@@ -29,4 +32,4 @@ Current pricing and purchases are handled through the [University of Tennessee F
 
 Account activation instructions are supplied by email after purchase. Please allow up to 24 hours for setup.
 
-Subscription and eligibility support: **hefnerj1@msu.edu**
+Subscription and eligibility support: **fordisc.support@gmail.com**

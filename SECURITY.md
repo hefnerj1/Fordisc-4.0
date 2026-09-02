@@ -4,7 +4,7 @@
 
 Do not disclose a suspected vulnerability in a public GitHub issue, discussion, pull request, or commit.
 
-Send security concerns privately to **hefnerj1@msu.edu** with the subject line `FORDISC security report`.
+Send security concerns privately to **fordisc.support@gmail.com** with the subject line `FORDISC security report`.
 
 ## Do not post case information
 

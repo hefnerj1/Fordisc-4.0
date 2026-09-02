@@ -132,6 +132,9 @@ main { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
   font-size: .88rem;
   font-weight: 800;
 }
+.release-status { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+.release-status .release-chip { margin-top: 0; }
+.release-chip.beta { border-color: #9fd3ce; background: #edf9f7; color: #155f5b; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.35rem; }
 .button {
   display: inline-flex;
@@ -223,6 +226,7 @@ main { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
 .plan-card p { flex: 1; }
 .plan-card small { display: block; margin-top: 1rem; color: #607082; }
 .release-card.current { border-color: #9e76d6; box-shadow: inset 0 0 0 1px #d6c2f0; }
+.release-card.beta-card { border-color: #74c2bb; box-shadow: inset 0 0 0 1px #bce4df; }
 .release-card ul { margin: .65rem 0 0; padding-left: 1.2rem; color: var(--muted); }
 .release-card li + li { margin-top: .35rem; }
 
@@ -258,6 +262,7 @@ main { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
   background: var(--purple-soft);
 }
 .callout p { margin: 0; }
+.callout .citation-guidance { margin-top: .7rem; color: var(--muted); }
 
 .site-footer {
   margin-top: 2rem;
