@@ -1,0 +1,144 @@
+services:
+  - type: web
+    name: fd4-subscription-staging
+    runtime: docker
+    plan: standard
+    dockerfilePath: ./Dockerfile.render
+    healthCheckPath: /render-health
+    autoDeploy: false
+    envVars:
+      # Shared-password access remains disabled. Clerk is the only hosted sign-in path.
+      - key: FD4_BETA_AUTH_REQUIRED
+        value: "0"
+      - key: VITE_CLERK_ENABLED
+        value: "1"
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: FD4_CLERK_AUTH_REQUIRED
+        value: "1"
+      - key: FD4_CLERK_ACCESS_REQUIRED
+        value: "1"
+
+      # Production hardening. Interactive API documentation is disabled,
+      # security headers are enabled, and HSTS is applied to HTTPS responses.
+      - key: FD4_API_DOCS_ENABLED
+        value: "0"
+      - key: FD4_IMPORT_DATA_ENABLED
+        value: "0"
+      - key: FD4_SECURITY_HEADERS_ENABLED
+        value: "1"
+      - key: FD4_HSTS_MAX_AGE_SECONDS
+        value: "15552000"
+
+      # One named user may have only one active FORDISC Clerk session. A new
+      # activation revokes prior active sessions; analysis requests are checked
+      # before and after computation. Fordisc Demo remains unaffected.
+      - key: FD4_CLERK_SINGLE_ACTIVE_SESSION_ENFORCED
+        value: "1"
+      - key: FD4_CLERK_SESSION_CONTROL_TIMEOUT_SECONDS
+        value: "5"
+
+      # Public, no-sign-in Fordisc Demo. The browser can call only the exact
+      # locked module-list and server-owned Module Test Case endpoints.
+      - key: FD4_PUBLIC_FREE_ENABLED
+        value: "1"
+      - key: VITE_FD4_PUBLIC_FREE_ENABLED
+        value: "1"
+      - key: FD4_MODULE_TEST_CASE_CACHE_ENABLED
+        value: "1"
+      - key: FD4_ANONYMOUS_FREE_RATE_WINDOW_SECONDS
+        value: "3600"
+      - key: FD4_ANONYMOUS_FREE_RATE_MAX_RUNS
+        value: "120"
+      - key: FD4_ANONYMOUS_FREE_MAX_CONCURRENT
+        value: "4"
+
+      # Beta/admin full access is explicit only. Tag current beta users in
+      # Clerk private_metadata with {"fd4_access":"beta_tester"}.
+      - key: FD4_CLERK_BETA_ACCESS_VALUES
+        value: "beta_tester,beta-tester,beta,admin"
+      - key: FD4_CLERK_USER_CACHE_TTL_SECONDS
+        value: "60"
+
+      - key: CLERK_JWT_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CLERK_AUTHORIZED_PARTIES
+        sync: false
+
+      # Production soft launch remains invitation-only. Purchases are handled by
+      # the UTK TouchNet store and access is provisioned manually in Clerk.
+      - key: VITE_FD4_PUBLIC_SIGNUP_ENABLED
+        value: "0"
+      - key: VITE_CLERK_BILLING_ENABLED
+        value: "0"
+      - key: VITE_FD4_TOUCHNET_STORE_URL
+        value: "https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true"
+
+      # Fordisc Student: individual, $30 annually, no trial.
+      - key: VITE_CLERK_STUDENT_PLAN_ID
+        value: "cplan_3HHNPGhhocjgC7bCczaDZhjQIMO"
+      - key: VITE_CLERK_STUDENT_PLAN_SLUG
+        value: "fd4_student_access"
+      - key: FD4_CLERK_STUDENT_PLAN_SLUG
+        value: "fd4_student_access"
+      - key: FD4_CLERK_STUDENT_FEATURE_KEY
+        value: "fd4_student_access"
+      - key: VITE_FD4_STUDENT_PRICE
+        value: "$30/year"
+
+      # Fordisc Pro: individual, $100 annually, no trial.
+      - key: VITE_CLERK_PRO_PLAN_ID
+        value: "cplan_3Grg61YAfyMjpkWqoFYtVvrdXCY"
+      - key: VITE_CLERK_PRO_PLAN_SLUG
+        value: "fd4_app_access"
+      - key: FD4_CLERK_PRO_PLAN_SLUG
+        value: "fd4_app_access"
+      - key: FD4_CLERK_PRO_FEATURE_KEY
+        value: "fd4_full_access"
+      - key: VITE_FD4_PRO_PRICE
+        value: "$100/year"
+
+      # Fordisc Institution: Organization plan with 15 included named users.
+      # Additional-user pricing is handled through subscription support.
+      - key: VITE_CLERK_INSTITUTION_PLAN_ID
+        value: "cplan_3HHKaIeE74us1MVGx9pm1mgxbXp"
+      - key: VITE_CLERK_INSTITUTION_PLAN_SLUG
+        value: "fordisc_institutional"
+      - key: FD4_CLERK_INSTITUTION_PLAN_SLUG
+        value: "fordisc_institutional"
+      - key: FD4_CLERK_INSTITUTION_FEATURE_KEY
+        value: "fd4_full_access"
+      - key: VITE_FD4_INSTITUTION_PRICE
+        value: "$600/year"
+      - key: VITE_FD4_INSTITUTION_INCLUDED_SEATS
+        value: "15"
+      - key: VITE_FD4_INSTITUTION_EXTRA_SEAT_PRICE
+        value: "contact subscription support"
+      - key: VITE_FD4_INSTITUTION_MAX_SEATS
+        value: "20"
+
+      # The existing Pro plan remains recognized by its user-scoped plan slug.
+      # The shared feature fallback is limited to the explicit full-access key.
+      - key: FD4_CLERK_FULL_FEATURE_KEYS
+        value: "fd4_full_access"
+
+      # Student eligibility is rechecked server-side on every access refresh.
+      - key: FD4_STUDENT_EMAIL_DOMAIN_SUFFIXES
+        value: ".edu,.mil,.gov"
+      - key: FD4_STUDENT_EMAIL_DOMAINS
+        value: ""
+      - key: FD4_STUDENT_EMAIL_BLOCKLIST
+        value: ""
+
+      - key: VITE_FD4_SUPPORT_EMAIL
+        value: "fordisc.support@gmail.com"
+      # R-bridge safety ceiling. The locked v1.0.13.2 optimization keeps the
+      # all-group Howells LOOCV workload well below this fallback limit in
+      # ordinary operation.
+      - key: FD4_R_BRIDGE_TIMEOUT_SECONDS
+        value: "900"
+
+      - key: PYTHONUNBUFFERED
+        value: "1"

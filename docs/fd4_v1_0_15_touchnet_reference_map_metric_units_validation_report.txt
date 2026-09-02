@@ -1,0 +1,233 @@
+FORDISC 4.0 v1.0.15
+TOUCHNET TRANSITION, REFERENCE MAP, METRIC STATURE DISPLAY, AND NO-BANNER VALIDATION REPORT
+
+SCOPE
+-----
+v1.0.15 is built directly on the user-accepted and locked v1.0.14.1 package.
+
+Requested changes:
+
+- Replace plan-specific purchase controls on the opening and Plans pages with one UTK TouchNet button on each page.
+- Use fordisc.support@gmail.com for subscription and eligibility support.
+- Correct the oversized Fordisc Student postcranial missing-birth-year checkbox.
+- State that Fordisc Institution includes 10 named users and that additional-user pricing is TBD, while retaining equal plan-card sizes.
+- State that credentials are supplied by email and account setup may require up to 24 hours.
+- Supply modern web/subscription Terms for UTK review.
+- Retire the duplicate expanded Reference Group Selection tab and add a Reference Group World Map after Help.
+- Add a display-only Inches/Centimeters stature toggle.
+- Remove the visible large-table explanatory banner while retaining contained scrolling and the default small-analysis view.
+
+The R analytical engine, R bridge, reference data, accepted Stepwise behavior, diagnostic calculations, stature equations, Howells performance optimization, and unrelated accepted interface behavior are unchanged.
+
+PACKAGE IDENTITY
+----------------
+PASS  Public version: 1.0.15
+PASS  Frontend package version: 1.0.15
+PASS  Frontend scaffold: react_typescript_v1_0_15_touchnet_reference_map_metric_units
+PASS  Active Help source: fd4_help_living_draft_v1_0_15.md
+PASS  Workflow screen metadata count: 9
+PASS  Engine version: fordisc4_r_engine_v0_14
+PASS  R-bridge fallback timeout: 900 seconds
+PASS  Case schema remains version 4
+
+TOUCHNET AND PLAN CHECKS
+------------------------
+PASS  Opening-page plan cards contain no plan-specific signup or purchase button.
+PASS  Signed-in Plans-page cards contain no plan-specific checkout button.
+PASS  Shared TouchNet purchase panel is rendered once on each page.
+PASS  Shared button label is Purchase Access Through UTK.
+PASS  Default URL matches the supplied UTK TouchNet store.
+PASS  Link opens in a new tab with noopener/noreferrer protection.
+PASS  Packaged public signup is disabled.
+PASS  Packaged Clerk Billing is disabled.
+PASS  Credential message states username and password are supplied by email.
+PASS  Credential message states account setup may take up to 24 hours.
+PASS  Support address is fordisc.support@gmail.com in frontend and deployment configuration.
+PASS  Institution copy includes 10 named users and additional-user price TBD.
+PASS  Browser validation showed all four plan cards at an identical 228-pixel height.
+
+STUDENT CHECKBOX CHECKS
+-----------------------
+PASS  Broad Student stature input styling excludes checkbox inputs.
+PASS  Dedicated checkbox rule applies 18-pixel width and height.
+PASS  Browser bounding box: 18 x 18 pixels.
+PASS  Default checked state and analytical request behavior unchanged.
+
+MANUAL TOUCHNET ENTITLEMENT CHECKS
+----------------------------------
+PASS  Student active user-scope record grants Student only when institutional email eligibility passes.
+PASS  Pro active user-scope record grants full personal access.
+PASS  Institution active Organization-scope record grants full organizational access.
+PASS  Institution seat_limit=10 is retained in the sanitized access summary.
+PASS  Wrong-scope tier is rejected.
+PASS  Missing expiration is rejected.
+PASS  Expired record is rejected automatically.
+PASS  Revoked/inactive record is rejected.
+PASS  Future activation is not treated as active.
+PASS  Payment/order reference content is not returned to the browser.
+PASS  Existing Clerk Billing claims and explicit beta/admin overrides remain available as separate compatibility paths.
+
+REFERENCE GROUP WORLD MAP CHECKS
+--------------------------------
+PASS  reference_group_selection removed from active backend, App, and access capability metadata.
+PASS  Compact Reference Groups panel remains above Measurement Entry.
+PASS  reference_group_world_map added to full-access screen set.
+PASS  Frontend order places Help immediately before Reference Group World Map.
+PASS  Student and Free screen sets remain unchanged.
+PASS  Howells map asset created as WebP: 1800 x 1368 pixels, 346,248 bytes.
+PASS  Map provenance identifies the FORDISC 3 Help file.
+PASS  Seven approximate FDB source-area markers render.
+PASS  FDB directory covers all 13 selectable FDB group codes.
+PASS  Howells/UTK directory covers all 65 selectable Howells-module group codes.
+PASS  Interpretive caution states that locations are approximate and not analytical boundaries.
+PASS  Browser validation confirmed the image loaded at natural width greater than 1,000 pixels and seven markers were present.
+PASS  Visual inspection confirmed map, markers, directory, legend, and caution render inside the FD4 page treatment.
+
+STATURE DISPLAY-UNIT CHECKS
+---------------------------
+PASS  StatureUnits type is restricted to in or cm.
+PASS  Default is inches.
+PASS  Options includes the Inches/Centimeters toggle.
+PASS  Fordisc Student Postcranial setup includes the same toggle.
+PASS  Exact conversion constant: 2.54.
+PASS  Representative arithmetic: 70.0 in = 177.8 cm; 10.0 in = 25.4 cm.
+PASS  Display units are absent from the R analysis payload.
+PASS  Display units are absent from the analytical staleness signature.
+PASS  Best estimate, lower/upper interval, and PI width are converted and labeled.
+PASS  Top and all-equation tables convert/display relevant stature columns.
+PASS  Slope and intercept are multiplied by 2.54 for centimeter equation display.
+PASS  Bone-measurement Value is not converted.
+PASS  Sample size and R-square are not converted.
+PASS  Stature graphs convert displayed reference points, fitted lines, intervals, case values, and axis labels.
+PASS  HTML/text reports record and use the selected units.
+PASS  Run Log entries snapshot and restore units per run.
+PASS  Run Log PDF uses each run's stored units.
+PASS  Saved case stores and restores the preference; missing legacy preference defaults to inches.
+PASS  Current Help documents the exact conversion and analytical isolation.
+
+LARGE-GROUP TABLE CHECKS
+------------------------
+PASS  More-than-12-group threshold retained.
+PASS  Wide workspace/table containment retained.
+PASS  Horizontal table scrolling retained.
+PASS  Sticky first column retained.
+PASS  Default small-analysis rules retained.
+PASS  Visible large-table notice JSX removed.
+PASS  Notice CSS removed.
+PASS  Notice translation keys removed.
+PASS  Current Help contains no former notice title or sentence.
+PASS  Synthetic 65-group table browser metrics:
+
+      viewport width:          1440 px
+      document scroll width:   1440 px
+      table viewport width:    1288 px
+      table content width:     3336 px
+      horizontal scroll tested beyond 1000 px
+
+PASS  No page-level horizontal overflow.
+PASS  No notice element or former notice wording rendered.
+
+FRONTEND AND METADATA CHECKS
+----------------------------
+PASS  Frontend TypeScript/TSX syntax transpilation passed for nine active source files.
+PASS  Semantic TypeScript check passed with dependency stubs.
+PASS  In-process /health endpoint returned expected version/scaffold/engine/timeout.
+PASS  In-process workflow endpoint returned nine screens, including map and excluding expanded group selection.
+PASS  In-process Help endpoint returned version 1.0.15 and current Help source.
+PASS  Browser visual preview inspected for plan, unit selector, Student checkbox, map, and 65-group table.
+
+CARRIED-FORWARD TIMEOUT AND NUMERICAL CHECKS
+--------------------------------------------
+PASS  Structured R-bridge timeout unit test retained HTTP 504 behavior.
+PASS  No fixed timeout=180 remains.
+PASS  Exact one-case-deletion numerical equivalence passed.
+
+Howells all-group fixture:
+
+      reference N:                         3964
+      groups:                              65
+      variables:                           13
+      sampled brute-force cases:           19
+      max covariance absolute difference:  1.4210854715202004e-14
+      max group-mean absolute difference:  2.842170943040401e-14
+      max D-squared absolute difference:   3.197442310920451e-13
+
+Locked FA008-09 diagnostic fixture:
+
+      reference N:                         967
+      groups:                              8
+      variables:                           15
+      brute-force cases compared:          967
+      max covariance absolute difference:  1.2079226507921703e-13
+      max group-mean absolute difference:  2.842170943040401e-14
+      max D-squared absolute difference:   2.1316282072803006e-13
+      brute-force outliers:                13
+      exact-update outliers:               13
+      outlier membership identical:        yes
+      ranked-typicality targets matched:   8 of 8
+
+LOCKED FILE COMPARISON
+----------------------
+The following files are byte-for-byte identical to accepted v1.0.14.1:
+
+PASS  engine/fordisc4_r_engine_v0_14/R/lda_engine.R
+      fe3a6ee0f23cdba4ebd1eb22a774e24f8d5c9e3557eaa1a0d111874b1a62b83f
+PASS  engine/fordisc4_r_engine_v0_14/R/utils.R
+      015fedab4068cb9e6d8d971fa44403a1dbc3e6a9ede7fba4b61ad3a4ad0c5851
+PASS  r_bridge/run_engine.R
+      ca7e170341487dc73c9e1de0071cb0f669501d6aaeb993ea185cbf079eccd383
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3CRAN.csv
+      514a589c548f2d10999e1e3184ac747266f35d1e946f7f0da56ccdce97d6023e
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3POST.csv
+      3cfa3605d6cd3aa453f5abb5c4babe34c6995095a8fb856ebb2a264868abfebf
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3VARRANGES.csv
+      fe2627fe837ed4a5a07ed3fe1207fe49cfd18cfca806205e1f772bcf8b0f3336
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_cranial.csv
+      4ca2051ccfc808840f65a1b599656fa19af49f952a2f4fb63d5af571e0211e12
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_postcranial.csv
+      22cf3a27aa7b7487c49f5cc6ecf529ad93dc68957b8b0aea6b57cf1a13f00fbc
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_stature.csv
+      b860a414368e3bdcfb357bc64668704cef7e247150c951349e79375101436dd3
+
+TERMS AND DOCUMENTATION
+-----------------------
+PASS  Modern web/subscription Terms draft included in editable DOCX and source-Markdown formats.
+PASS  Both draft formats are marked not approved, not effective, and not for public posting.
+PASS  Draft covers plan/account, TouchNet, activation, expiration, scientific responsibility, data, security, IP, availability, suspension, and legal placeholders.
+PASS  DOCX rendered cleanly to seven pages with no clipping, overlap, or broken pagination.
+PASS  Manual provisioning guide includes Student, Pro, and Institution examples; expiration, renewal, refund/revocation, and fulfillment-register instructions.
+PASS  Current Help revision notes are blank.
+
+ARTIFACT-ENVIRONMENT LIMITATIONS
+--------------------------------
+Rscript and Docker were not installed in the artifact environment. A fresh npm dependency installation timed out, so a full production Vite build could not be repeated locally. Frontend syntax, semantic TypeScript contracts, static release behavior, in-process endpoints, and browser layout were validated independently.
+
+Deployment-side acceptance remains required for:
+
+- clean Docker/Render frontend build;
+- live R no-Stepwise, Stepwise, and diagnostic regressions;
+- live all-group Howells analysis;
+- live report and Run Log PDF behavior;
+- live Clerk Development manual entitlement provisioning;
+- live TouchNet link and invitation-only account flow.
+
+ARCHIVE VALIDATION
+------------------
+PASS  Complete Docker-ready package contains 274 files.
+PASS  Mini-patch contains 28 files and targets a clean accepted v1.0.14.1 repository.
+PASS  Both ZIP archives passed CRC and integrity testing.
+PASS  Every mini-patch file is byte-for-byte identical to its complete-package counterpart.
+PASS  Applying the mini-patch to a clean v1.0.14.1 package reproduced the complete v1.0.15 package exactly.
+PASS  Release archive SHA-256 values are recorded in fd4_v1_0_15_RELEASE_SHA256SUMS.txt.
+
+FINAL STATUS
+------------
+PASS     v1.0.15 requested source changes complete.
+PASS     TouchNet storefront transition and temporary support messaging implemented.
+PASS     Manual TouchNet-to-Clerk entitlement path implemented and validated.
+PASS     Student checkbox corrected.
+PASS     Reference Group World Map added and expanded group-selection tab retired.
+PASS     Display-only metric stature units implemented across UI, graphs, reports, saved cases, and Run Log.
+PASS     Visible large-table explanatory banner removed while containment remains.
+PASS     Locked analytical and reference files preserved byte-for-byte.
+PENDING  Render/Docker/R live deployment acceptance and final institutional production configuration.

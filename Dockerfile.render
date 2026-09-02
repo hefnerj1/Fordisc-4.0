@@ -1,0 +1,98 @@
+# Render single-service Dockerfile for FORDISC 4.1.0-alpha.1 International Crania with Clerk authentication and UTK TouchNet purchasing.
+# Builds the React frontend, then serves frontend + FastAPI/R engine from one Render Web Service.
+
+FROM node:20-alpine AS frontend-build
+WORKDIR /frontend
+COPY frontend/package.json ./
+# Do not COPY frontend/.npmrc here: browser/GitHub uploads often omit dotfiles.
+# Create the tiny npm config inside the image so Render builds are robust.
+RUN printf "package-lock=false\naudit=false\nfund=false\nprogress=false\nloglevel=warn\n" > .npmrc
+RUN npm install --no-audit --no-fund --no-package-lock
+COPY frontend/ ./
+# Empty API base means the built frontend calls same-origin FastAPI endpoints like /health and /analyze/...
+# Render passes service environment variables to Docker builds as build args.
+# VITE_CLERK_PUBLISHABLE_KEY is intentionally public; do not pass Clerk secret keys here.
+ARG VITE_API_BASE=""
+ARG VITE_CLERK_ENABLED="0"
+ARG VITE_CLERK_PUBLISHABLE_KEY=""
+ARG VITE_CLERK_BILLING_ENABLED="0"
+ARG VITE_FD4_PUBLIC_SIGNUP_ENABLED="0"
+ARG VITE_FD4_PUBLIC_FREE_ENABLED="1"
+ARG VITE_FD4_TOUCHNET_STORE_URL="https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true"
+ARG VITE_CLERK_STUDENT_PLAN_ID="cplan_3HHNPGhhocjgC7bCczaDZhjQIMO"
+ARG VITE_CLERK_PRO_PLAN_ID="cplan_3Grg61YAfyMjpkWqoFYtVvrdXCY"
+ARG VITE_CLERK_INSTITUTION_PLAN_ID="cplan_3HHKaIeE74us1MVGx9pm1mgxbXp"
+ARG VITE_CLERK_STUDENT_PLAN_SLUG="fd4_student_access"
+ARG VITE_CLERK_PRO_PLAN_SLUG="fd4_app_access"
+ARG VITE_CLERK_INSTITUTION_PLAN_SLUG="fordisc_institutional"
+ARG VITE_CLERK_PRO_FEATURE_KEY="fd4_app_access"
+ARG VITE_FD4_SUPPORT_EMAIL="fordisc.support@gmail.com"
+ARG VITE_FD4_STUDENT_PRICE="\$30/year"
+ARG VITE_FD4_PRO_PRICE="\$100/year"
+ARG VITE_FD4_INSTITUTION_PRICE="\$600/year"
+ARG VITE_FD4_INSTITUTION_INCLUDED_SEATS="15"
+ARG VITE_FD4_INSTITUTION_EXTRA_SEAT_PRICE="contact subscription support"
+ARG VITE_FD4_INSTITUTION_MAX_SEATS="20"
+ENV VITE_API_BASE=$VITE_API_BASE
+ENV VITE_CLERK_ENABLED=$VITE_CLERK_ENABLED
+ENV VITE_CLERK_PUBLISHABLE_KEY=$VITE_CLERK_PUBLISHABLE_KEY
+ENV VITE_CLERK_BILLING_ENABLED=$VITE_CLERK_BILLING_ENABLED
+ENV VITE_FD4_PUBLIC_SIGNUP_ENABLED=$VITE_FD4_PUBLIC_SIGNUP_ENABLED
+ENV VITE_FD4_PUBLIC_FREE_ENABLED=$VITE_FD4_PUBLIC_FREE_ENABLED
+ENV VITE_FD4_TOUCHNET_STORE_URL=$VITE_FD4_TOUCHNET_STORE_URL
+ENV VITE_CLERK_STUDENT_PLAN_ID=$VITE_CLERK_STUDENT_PLAN_ID
+ENV VITE_CLERK_PRO_PLAN_ID=$VITE_CLERK_PRO_PLAN_ID
+ENV VITE_CLERK_INSTITUTION_PLAN_ID=$VITE_CLERK_INSTITUTION_PLAN_ID
+ENV VITE_CLERK_STUDENT_PLAN_SLUG=$VITE_CLERK_STUDENT_PLAN_SLUG
+ENV VITE_CLERK_PRO_PLAN_SLUG=$VITE_CLERK_PRO_PLAN_SLUG
+ENV VITE_CLERK_INSTITUTION_PLAN_SLUG=$VITE_CLERK_INSTITUTION_PLAN_SLUG
+ENV VITE_CLERK_PRO_FEATURE_KEY=$VITE_CLERK_PRO_FEATURE_KEY
+ENV VITE_FD4_SUPPORT_EMAIL=$VITE_FD4_SUPPORT_EMAIL
+ENV VITE_FD4_STUDENT_PRICE=$VITE_FD4_STUDENT_PRICE
+ENV VITE_FD4_PRO_PRICE=$VITE_FD4_PRO_PRICE
+ENV VITE_FD4_INSTITUTION_PRICE=$VITE_FD4_INSTITUTION_PRICE
+ENV VITE_FD4_INSTITUTION_INCLUDED_SEATS=$VITE_FD4_INSTITUTION_INCLUDED_SEATS
+ENV VITE_FD4_INSTITUTION_EXTRA_SEAT_PRICE=$VITE_FD4_INSTITUTION_EXTRA_SEAT_PRICE
+ENV VITE_FD4_INSTITUTION_MAX_SEATS=$VITE_FD4_INSTITUTION_MAX_SEATS
+RUN npm run build
+
+FROM rocker/r-ver:4.4.2
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    python3 \
+    python3-venv \
+    python3-pip \
+    build-essential \
+    gfortran \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN Rscript -e "pkgs <- c('jsonlite','dplyr','tibble','MASS'); install.packages(pkgs, repos='https://cloud.r-project.org', dependencies=c('Depends','Imports','LinkingTo')); missing <- pkgs[!vapply(pkgs, requireNamespace, quietly=TRUE, FUN.VALUE=logical(1))]; if (length(missing)) stop('Missing R packages after install: ', paste(missing, collapse=', '))"
+
+WORKDIR /opt/fordisc4
+
+COPY requirements.txt /opt/fordisc4/requirements.txt
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install --no-cache-dir -r /opt/fordisc4/requirements.txt
+
+COPY app /opt/fordisc4/app
+COPY r_bridge /opt/fordisc4/r_bridge
+COPY engine /opt/fordisc4/engine
+COPY examples /opt/fordisc4/examples
+COPY docs /opt/fordisc4/docs
+COPY scripts /opt/fordisc4/scripts
+COPY --from=frontend-build /frontend/dist /opt/fordisc4/frontend_dist
+
+ENV FD4_ENGINE_PATH=/opt/fordisc4/engine/fordisc4_r_engine_v0_14
+ENV FD4_RSCRIPT=Rscript
+ENV FD4_IMPORT_DATA_ENABLED=0
+
+EXPOSE 10000
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]

@@ -1,0 +1,179 @@
+FORDISC 4.0 v1.0.15.1
+PREDEPLOYMENT POLISH AND NO-SIGN-IN FORDISC FREE
+VALIDATION REPORT
+
+RELEASE BASE
+------------
+v1.0.15.1 is built directly on the accepted v1.0.15 complete Docker-ready package.
+The analytical engine, R bridge, reference data, TouchNet purchasing, manual Clerk entitlements, stature calculations, Run Log PDF, large-group table handling, and unrelated accepted v1.0.15 behavior are locked.
+
+RELEASE IDENTITY
+----------------
+PASS  Public version: 1.0.15.1
+PASS  Frontend package version: 1.0.15.1
+PASS  Frontend scaffold: react_typescript_v1_0_15_1_public_free_ui_polish
+PASS  Active Help source: fd4_help_living_draft_v1_0_15_1.md
+PASS  Workflow screen count: 9
+PASS  Engine version: fordisc4_r_engine_v0_14
+PASS  R-bridge timeout: 900 seconds
+
+SOURCE AND LANGUAGE VALIDATION
+------------------------------
+PASS  Python compileall completed without errors.
+PASS  Frontend TypeScript/TSX isolated syntax transpilation passed for 9 files.
+PASS  Semantic TypeScript checking passed using temporary dependency stubs in the artifact environment.
+PASS  v1.0.15.1 static release validator passed.
+PASS  No backup, reject, or editor-temporary files were found in the release source.
+
+NO-SIGN-IN FORDISC FREE
+-----------------------
+PASS  Signed-out landing page contains a prominent Try Fordisc Free action.
+PASS  The public workspace route is /try.
+PASS  The public route renders before Clerk sign-in is loaded when no authenticated session exists.
+PASS  Anonymous capability envelope includes FDB, Howells, and Postcranial.
+PASS  Anonymous screens are limited to Results and Graphs.
+PASS  Manual data entry, arbitrary analysis, cases, Options, Extended Results, Help, map, reports, imports, notes, and outlier controls are disabled.
+PASS  Anonymous request marker is sent only when the browser is on /try.
+PASS  Backend recognizes the marker only for /metadata/modules and /analyze/module-test-case.
+PASS  Unsigned calls without the marker were rejected with HTTP 401 under hosted-auth settings.
+PASS  Adding the anonymous marker to variable metadata, analysis options, workflow, Help, and arbitrary DFA did not authorize those routes.
+PASS  The Module Test Case request accepts only the three supported module identifiers.
+PASS  The browser supplies only a module identifier; test data and analysis settings are server owned.
+PASS  All three Module Test Cases returned the Free response envelope under stubbed analytical execution.
+PASS  Extended Results, reference outliers, and custom-reference payloads were removed from Free responses.
+PASS  Repeating a test case used the in-memory response cache.
+PASS  FD4_PUBLIC_FREE_ENABLED disabled the public route without a code change.
+PASS  Public-demo rate limit returned a friendly HTTP 429 response.
+PASS  Public-demo concurrency limit returned a friendly HTTP 429 response.
+
+REFERENCE GROUP WORLD MAP
+-------------------------
+PASS  Rendered map screen contains no FDB markers.
+PASS  Rendered map screen contains no FDB legend or FDB directory.
+PASS  Map component contains 28 documented Howells samples.
+PASS  Original FORDISC 3 Howells WebP asset is present and valid.
+PASS  Map width is limited to the available width and 980 pixels.
+PASS  Desktop map height is limited to min(62vh, 620px).
+PASS  Map uses object-fit: contain and preserves aspect ratio.
+PASS  Backend workflow metadata describes a Howells-only informational map.
+PASS  Frontend navigation strips prior Help/map positions and appends Help followed by Reference Group World Map.
+PASS  Help explains why the current map intentionally shows only Howells populations.
+
+OPTIONS AND HOME-CONTROL UI
+---------------------------
+PASS  On wide desktop layouts, Stature Options uses the dominant center column.
+PASS  Core Analysis and Exclude IDs use smaller side columns.
+PASS  Intermediate desktop layout places Stature Options across the full row.
+PASS  Stature units has a dedicated 190-pixel minimum width.
+PASS  Inches/Centimeters buttons have proportional widths and do not overlap Stature group.
+PASS  Stature display explanation is shortened.
+PASS  The diagnostic-section helper sentence was removed from Extended Results display.
+PASS  The prominent Check for measurement error control remains.
+PASS  Upper-left FORDISC brand is a semantic button.
+PASS  Brand control has keyboard focus styling and an accessible label.
+PASS  Brand control calls the complete workspace reset and returns to the tier-appropriate default screen.
+
+BROWSER LAYOUT HARNESS
+----------------------
+PASS  1440 x 1000 viewport: document width remained 1440 pixels.
+PASS  1440 x 1000 viewport: map rendered at approximately 816 x 620 pixels and remained contained.
+PASS  1440 x 1000 viewport: Stature Options was more than 2.4 times the width of each compact side panel.
+PASS  1440 x 1000 viewport: Stature units and Stature group did not overlap.
+PASS  1366 x 900 viewport: document width remained 1366 pixels.
+PASS  1366 x 900 viewport: map rendered at approximately 734 x 558 pixels and remained contained.
+PASS  Both desktop harnesses displayed the public Free action and logo home control.
+PASS  Both desktop harnesses displayed no FDB markers or FDB legend.
+
+PRESERVED v1.0.15 REGRESSIONS
+-----------------------------
+PASS  TouchNet purchase route and 24-hour credential notice remain present.
+PASS  Support address is fordisc.support@gmail.com.
+PASS  Institution plan remains 10 named users with additional-user price TBD.
+PASS  Manual TouchNet-to-Clerk entitlement regression passed.
+PASS  Student institutional-email eligibility behavior remains present.
+PASS  Student postcranial checkbox remains proportional.
+PASS  Stature display-unit regression passed: inches default and exact 2.54 conversion.
+PASS  Large-group table containment remains and no visible Wide table view message is present.
+PASS  Run Log PDF and schema-4 case behavior remain in source.
+PASS  Structured R timeout handling returned HTTP 504 with workload details.
+
+EXACT UPDATE / DIAGNOSTIC REGRESSION
+------------------------------------
+Howells all-groups fixture:
+
+      reference N:                         3964
+      groups:                              65
+      variables:                           13
+      sampled brute-force cases:           19
+      max covariance absolute difference:  1.4210854715202004e-14
+      max group-mean absolute difference:  2.842170943040401e-14
+      max D-squared absolute difference:   3.197442310920451e-13
+
+Locked FA008-09 diagnostic fixture:
+
+      reference N:                         967
+      groups:                              8
+      variables:                           15
+      brute-force cases compared:          967
+      max covariance absolute difference:  1.2079226507921703e-13
+      max group-mean absolute difference:  2.842170943040401e-14
+      max D-squared absolute difference:   2.1316282072803006e-13
+      brute-force outliers:                13
+      exact-update outliers:               13
+      outlier membership identical:        yes
+      ranked-typicality targets matched:   8 of 8
+
+LOCKED FILE COMPARISON
+----------------------
+PASS  engine/fordisc4_r_engine_v0_14/R/lda_engine.R
+      fe3a6ee0f23cdba4ebd1eb22a774e24f8d5c9e3557eaa1a0d111874b1a62b83f
+PASS  engine/fordisc4_r_engine_v0_14/R/utils.R
+      015fedab4068cb9e6d8d971fa44403a1dbc3e6a9ede7fba4b61ad3a4ad0c5851
+PASS  r_bridge/run_engine.R
+      ca7e170341487dc73c9e1de0071cb0f669501d6aaeb993ea185cbf079eccd383
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3CRAN.csv
+      514a589c548f2d10999e1e3184ac747266f35d1e946f7f0da56ccdce97d6023e
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3POST.csv
+      3cfa3605d6cd3aa453f5abb5c4babe34c6995095a8fb856ebb2a264868abfebf
+PASS  engine/fordisc4_r_engine_v0_14/data/FD3VARRANGES.csv
+      fe2627fe837ed4a5a07ed3fe1207fe49cfd18cfca806205e1f772bcf8b0f3336
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_cranial.csv
+      4ca2051ccfc808840f65a1b599656fa19af49f952a2f4fb63d5af571e0211e12
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_postcranial.csv
+      22cf3a27aa7b7487c49f5cc6ecf529ad93dc68957b8b0aea6b57cf1a13f00fbc
+PASS  engine/fordisc4_r_engine_v0_14/data/fdb_stature.csv
+      b860a414368e3bdcfb357bc64668704cef7e247150c951349e79375101436dd3
+
+ARTIFACT-ENVIRONMENT LIMITATIONS
+--------------------------------
+Rscript and Docker were not installed in the artifact environment. The package registry was not reachable, so a fresh npm install and production Vite build could not be performed locally. Frontend syntax, semantic TypeScript contracts, static behavior, in-process authorization, endpoint identity, and desktop CSS layout were validated independently.
+
+Deployment-side acceptance remains required for:
+
+- clean Render Docker/frontend build;
+- live public FDB, Howells, and Postcranial Module Test Cases;
+- live R no-Stepwise, Stepwise, and diagnostic regressions;
+- live all-groups Howells analysis;
+- live Clerk invitation/sign-in and manual entitlement flow;
+- live TouchNet purchase link;
+- live reports, Run Log PDF, saved cases, and metric stature output.
+
+ARCHIVE VALIDATION
+------------------
+PASS  Complete Docker-ready package contains 282 source files.
+PASS  Mini-patch contains 25 files and targets a clean accepted v1.0.15 source tree.
+PASS  Both ZIP archives passed CRC and integrity testing.
+PASS  Every mini-patch file is byte-for-byte identical to its complete-package counterpart.
+PASS  Applying the mini-patch to a clean accepted v1.0.15 source tree reproduced the complete v1.0.15.1 package exactly.
+PASS  Release SHA-256 values are supplied in fd4_v1_0_15_1_RELEASE_SHA256SUMS.txt.
+
+FINAL STATUS
+------------
+PASS     Requested v1.0.15.1 source changes complete.
+PASS     Anonymous no-sign-in Fordisc Free implemented with a narrow server-controlled boundary.
+PASS     Reference Group World Map simplified to Howells only and constrained to the viewport.
+PASS     Stature Options proportions corrected and overlap removed.
+PASS     Diagnostic helper sentence removed.
+PASS     FORDISC logo converted to a complete workspace home/reset control.
+PASS     Locked analytical and reference files preserved.
+PENDING  Render/Docker/R live deployment acceptance and first technical deployment configuration for fordisc.com.

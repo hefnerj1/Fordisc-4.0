@@ -1,0 +1,40 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      FD4_ENGINE_PATH: /opt/fordisc4/engine/fordisc4_r_engine_v0_14
+      FD4_RSCRIPT: Rscript
+      FD4_R_BRIDGE_TIMEOUT_SECONDS: "900"
+      FD4_PUBLIC_FREE_ENABLED: "1"
+      FD4_MODULE_TEST_CASE_CACHE_ENABLED: "1"
+      FD4_ANONYMOUS_FREE_RATE_WINDOW_SECONDS: "3600"
+      FD4_ANONYMOUS_FREE_RATE_MAX_RUNS: "120"
+      FD4_ANONYMOUS_FREE_MAX_CONCURRENT: "4"
+      FD4_API_DOCS_ENABLED: "0"
+      FD4_IMPORT_DATA_ENABLED: "0"
+      FD4_SECURITY_HEADERS_ENABLED: "1"
+      FD4_HSTS_MAX_AGE_SECONDS: "15552000"
+    volumes:
+      - ./examples:/opt/fordisc4/examples:ro
+
+  frontend:
+    profiles: ["ui"]
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_PROXY_TARGET: http://api:8000
+      VITE_CLERK_BILLING_ENABLED: "0"
+      VITE_FD4_PUBLIC_SIGNUP_ENABLED: "0"
+      VITE_FD4_PUBLIC_FREE_ENABLED: "1"
+      VITE_FD4_TOUCHNET_STORE_URL: "https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true"
+      VITE_FD4_SUPPORT_EMAIL: "fordisc.support@gmail.com"
+      VITE_FD4_STUDENT_PRICE: "$30/year"
+      VITE_FD4_PRO_PRICE: "$100/year"
+      VITE_FD4_INSTITUTION_INCLUDED_SEATS: "15"
+      VITE_FD4_INSTITUTION_EXTRA_SEAT_PRICE: "contact subscription support"
+    depends_on:
+      - api
