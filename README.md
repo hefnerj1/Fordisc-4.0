@@ -28,7 +28,6 @@ FORDISC 4.0 rebuilds the FORDISC analytical workflow as a modern web application
 
 International Crania is included for Fordisc Pro and Fordisc Institution. It is not included in Fordisc Demo or Fordisc Student, and there is no server-owned International Demo Case.
 
-FORDISC 4.0 uses discriminant function analysis (DFA) language for exactly two retained groups and canonical variate analysis (CVA) language for three or more retained groups. DF Weights are displayed only for two-group analyses.
 
 ## Access
 
