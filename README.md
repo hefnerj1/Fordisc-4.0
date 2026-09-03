@@ -2,6 +2,9 @@
 
 **Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0.**
 
+<img width="897" height="1026" alt="Fordisc4_logo_crop" src="https://github.com/user-attachments/assets/e081c977-4c3a-455e-a059-e882813ac7d9" />
+
+
 [Launch FORDISC 4.0](https://www.fordisc.com) · [Purchase access through UTK](https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true) · [View release notes](CHANGELOG.md)
 
 > [!IMPORTANT]
