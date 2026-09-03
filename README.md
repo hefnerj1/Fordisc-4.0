@@ -55,4 +55,4 @@ See [CITATION.md](CITATION.md) for the preferred citation and documentation guid
 
 Subscription and eligibility support: **fordisc.support@gmail.com**
 
-<img width="450" alt="Forensic_Anthro_black_slides" src="https://github.com/user-attachments/assets/c023ef83-f33f-4ce5-8b0f-1589f47c83c1" />
+<img width="225" alt="Forensic_Anthro_black_slides" src="https://github.com/user-attachments/assets/c023ef83-f33f-4ce5-8b0f-1589f47c83c1" />
