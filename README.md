@@ -1,9 +1,10 @@
+
 # FORDISC 4.0
 
 **Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0.**
 
 <img width="450" alt="Fordisc4_logo_crop" src="https://github.com/user-attachments/assets/e081c977-4c3a-455e-a059-e882813ac7d9" />
-
+<img width="450" alt="Forensic_Anthro_black_slides" src="https://github.com/user-attachments/assets/c023ef83-f33f-4ce5-8b0f-1589f47c83c1" />
 
 [Launch FORDISC 4.0](https://www.fordisc.com) · [Purchase access through UTK](https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true) · [View release notes](CHANGELOG.md)
 
