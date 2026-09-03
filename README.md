@@ -9,7 +9,7 @@
 
 ## Release status
 
-The current public application baseline is **4.0.11**. The active International Crania beta candidate is technical release **4.1.0-alpha.1**. The public product name remains **FORDISC 4.0**.
+The current public application release is **4.0.13**. The public product name remains **FORDISC 4.0**.
 
 ## What is new in FORDISC 4.0
 
@@ -20,19 +20,23 @@ FORDISC 4.0 rebuilds the FORDISC analytical workflow as a modern web application
 - Modern Results, Extended Results, graphs, a five-lane Case Report, and a complete case-based Run Log.
 - Backward-compatible saved cases with independent module selections.
 - Anonymous Fordisc Demo Cases for FDB, Howells, and Postcranial.
-- Accessibility, keyboard-navigation, report-layout, and graph-presentation improvements.
+- Standard, Soft Midnight, and Color-Vision Accessible viewing modes, together with keyboard-navigation, report-layout, and graph-presentation improvements.
 - Student, Pro, and Institution access plans.
 
-International Crania is included in the active beta candidate for Fordisc Pro and Fordisc Institution. It is not included in Fordisc Demo or Fordisc Student, and there is no server-owned International Demo Case.
+International Crania is included for Fordisc Pro and Fordisc Institution. It is not included in Fordisc Demo or Fordisc Student, and there is no server-owned International Demo Case.
+
+FORDISC 4.0 uses discriminant function analysis (DFA) language for exactly two retained groups and canonical variate analysis (CVA) language for three or more retained groups. DF Weights are displayed only for two-group analyses.
 
 ## Access
 
 - **Fordisc Demo:** Built-in FDB, Howells, and Postcranial Demo Cases with Results and Graphs. No sign-in required.
 - **Fordisc Student:** FDB and Postcranial access for eligible users, including measurement entry, Results, Graphs, and limited case management.
-- **Fordisc Pro:** Full individual access to all supported FORDISC 4.0 modules and tools, including International Crania in the active beta candidate.
+- **Fordisc Pro:** Full individual access to all supported FORDISC 4.0 modules and tools, including International Crania.
 - **Fordisc Institution:** Full access for organizations and laboratories, including 15 named users. Additional named users may be added through an approved arrangement.
 
 Current pricing and purchase options are maintained in the [UTK FORDISC Store](https://secure.touchnet.com/C21610_ustores/web/store_main.jsp?STOREID=15&SINGLESTORE=true). Account activation instructions are supplied by email after purchase; please allow up to 24 hours for setup.
+
+Account invitation, activation, verification, and password-recovery emails use FORDISC branding. The production email workflows have been validated with tested `.edu`, `.mil`, and `.com` accounts.
 
 ## Contributors
 
