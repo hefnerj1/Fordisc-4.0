@@ -1,3 +1,4 @@
+![Uploading Fordisc4_logo_crop.png…]()
 # FORDISC 4.0
 
 **Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0.**
