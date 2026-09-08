@@ -1,4 +1,5 @@
-![Uploading Fordisc4_logo_crop.png…]()
+<img width="897" height="1026" alt="Fordisc4_logo_crop" src="https://github.com/user-attachments/assets/53f5fe80-698b-4b2a-a600-3157a53057ea" />
+
 # FORDISC 4.0
 
 **Public project information, access details, release notes, and contributor acknowledgments for FORDISC 4.0.**
