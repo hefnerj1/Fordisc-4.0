@@ -12,7 +12,8 @@
 
 - FDB and Postcranial access.
 - Measurement Entry, Results, Graphs, and limited case management.
-- Requires a verified `.edu`, `.gov`, `.mil`, or separately approved institutional email.
+- Automatically accepts a verified `.edu` email address.
+- Other institutional domains, including international academic domains, must be approved before purchase. `.gov` and `.mil` are not accepted automatically.
 
 ## Fordisc Pro
 
@@ -32,6 +33,6 @@ Current pricing and purchases are handled through the [University of Tennessee F
 
 Account activation instructions are supplied by email after purchase. Please allow up to 24 hours for setup.
 
-FORDISC-branded invitation, activation, verification, and password-recovery email workflows have completed production testing with `.edu`, `.mil`, and `.com` accounts.
+FORDISC-branded invitation, activation, verification, and password-recovery email workflows have completed production testing with `.edu`, `.mil`, and `.com` accounts. Successful email delivery does not establish Fordisc Student eligibility.
 
 Subscription and eligibility support: **fordisc.support@gmail.com**
