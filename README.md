@@ -9,17 +9,15 @@
 
 ## Release status
 
-The current public application release is **4.0.14**. The public product name remains **FORDISC 4.0**.
+The current public application release is **4.0.14**.
 
-## What is new in FORDISC 4.0
+## What's new:
 
 FORDISC 4.0 rebuilds the FORDISC analytical workflow as a modern web application. Major additions include:
 
 - Browser-based access with no local installation.
-- Independent FDB, Howells, International Crania, Postcranial DFA, and Stature workflows in one case-based application.
 - Modern Results, Extended Results, graphs, a five-lane Case Report, and a complete case-based Run Log.
 - Backward-compatible saved cases with independent module selections.
-- Anonymous Fordisc Demo Cases for FDB, Howells, and Postcranial.
 - Standard, Soft Midnight, and Color-Vision Accessible viewing modes, together with keyboard-navigation, report-layout, and graph-presentation improvements.
 - Student, Pro, and Institution access plans.
 
