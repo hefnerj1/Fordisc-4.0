@@ -36,9 +36,7 @@ The acknowledgments below recognize documented contributions without assigning s
 
 ### Investigators and other FDB contributors
 
-Bruce E. Anderson; J. Lawrence Angel; Francisco Baires; William M. Bass; Hugh Berryman; Thomas Bodkin; William Cawley; Kate Driscoll; Beatrix Dudzik; Anthony B. Falsetti; Cristina Figueroa Soto; Donna Fontana; David M. Glassman; Joseph T. Hefner; Nicholas P. Herrmann; Lana Ilias; Richard L. Jantz; Ginesse A. Listi; Jennifer Love; Heli Maijanen; Mary H. Manhein; Laura Manthey; Lee Meadows Jantz; Kyle McCormick; Peer Moore-Jansen; Stephen P. Nawrocki; Stephen D. Ousley; Karli Palmer; Michael Pietrusewsky; Ted Rathbun; William C. Rodriguez III; Sarah Schwing; Corey Sparks; M. Kate Spradley; Meredith L. Tise; Douglas H. Ubelaker; M. V. Velti; T. Y. Wadford; and Katy Weisensee.
-
-**Contributing organization:** North Carolina Office of the Chief Medical Examiner
+Bruce E. Anderson; J. Lawrence Angel; Francisco Baires; William M. Bass; Hugh Berryman; Thomas Bodkin; William Cawley; Kate Driscoll; Beatrix Dudzik; Anthony B. Falsetti; Cristina Figueroa Soto; Donna Fontana; David M. Glassman; Joseph T. Hefner; Nicholas P. Herrmann; Lana Ilias; Richard L. Jantz; Ginesse A. Listi; Jennifer Love; Heli Maijanen; Mary H. Manhein; Laura Manthey; Lee Meadows Jantz; Kyle McCormick; Peer Moore-Jansen; Stephen P. Nawrocki; Stephen D. Ousley; Karli Palmer; Michael Pietrusewsky; Ted Rathbun; William C. Rodriguez III; Ann Ross; Sarah Schwing; Corey Sparks; M. Kate Spradley; Meredith L. Tise; Douglas H. Ubelaker; M. V. Velti; T. Y. Wadford; and Katy Weisensee.
 
 ### Graduate research assistants
 
