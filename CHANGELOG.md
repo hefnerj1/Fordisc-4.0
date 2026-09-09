@@ -7,6 +7,7 @@ This changelog summarizes public, user-facing changes. Internal development hist
 - Limited automatic Fordisc Student email eligibility to verified `.edu` addresses.
 - Retained individual approval for other exact institutional domains, including international academic domains.
 - Removed automatic Student eligibility for `.gov` and `.mil` addresses; eligible institutions using those suffixes may still be approved by exact domain.
+- Added the reviewed Forensic Data Bank contributor and graduate research assistant acknowledgments.
 - Preserved all locked 4.0.13 analytical, data, display, reporting, saved-case, and plan-feature behavior.
 
 ## 4.0.13 — Presentation and FORDISC 3 parity
