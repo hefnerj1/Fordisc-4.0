@@ -40,7 +40,7 @@ Account invitation, activation, verification, and password-recovery emails use F
 
 ## Contributors
 
-The approved current contributor roster is maintained in [CONTRIBUTORS.md](CONTRIBUTORS.md).
+The contributor roster is maintained in [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ## Citation
 
